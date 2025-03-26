@@ -18,7 +18,7 @@
     line-height: 1.6;
     width: 100%;
     height: 100%;
-    background-image: url(beijing.png);
+    background-image: url(https://shsjyn.github.io/beijing.png);
 }
 
         .container {
