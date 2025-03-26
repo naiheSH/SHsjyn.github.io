@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商务合作 - 添加飞书/企业微信</title>
+    <!-- 新增字体图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 原有样式保持不变... */
+
+        /* 新增双平台样式 */
+        .platform-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .platform-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .platform-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .platform-icon {
+            width: 40px;
+            margin-right: 15px;
+        }
+
+        .dual-qrcode {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+
+        /* 新增企业微信专属颜色 */
+        .wxwork-btn {
+            background: #2AABE2;
+        }
+        .wxwork-btn:hover {
+            background: #2494c4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="your-logo.png" alt="Logo" class="logo">
+            <h1>立即添加商务联系方式</h1>
+            <p>选择您常用的沟通平台</p>
+        </div>
+
+        <!-- 新增双平台模块 -->
+        <div class="platform-section">
+            <!-- 飞书平台 -->
+            <div class="platform-card">
+                <div class="platform-title">
+                    <img src="feishu-icon.png" alt="飞书" class="platform-icon">
+                    <h2>飞书商务合作</h2>
+                </div>
+                <div class="dual-qrcode">
+                    <div>
+                        <img src="feishu-qrcode.png" alt="飞书二维码" class="qrcode">
+                        <a href="https://your-feishu-link.com" class="cta-button" target="_blank">立即添加</a>
+                    </div>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        打开飞书APP扫描二维码
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        或直接点击上方添加按钮
+                    </div>
+                </div>
+            </div>
+
+            <!-- 企业微信平台 -->
+            <div class="platform-card">
+                <div class="platform-title">
+                    <img src="wxwork-icon.png" alt="企业微信" class="platform-icon">
+                    <h2>企业微信联系</h2>
+                </div>
+                <div class="dual-qrcode">
+                    <div>
+                        <img src="wxwork-qrcode.png" alt="企业微信二维码" class="qrcode">
+                        <a href="https://work.weixin.qq.com/xxx" class="cta-button wxwork-btn" target="_blank">立即添加</a>
+                    </div>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        打开企业微信扫描二维码
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        或通过手机号搜索添加
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 统一操作指引 -->
+        <div class="card" style="margin:30px auto; max-width:800px;">
+            <h2><i class="fas fa-question-circle"></i> 通用添加指引</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-mobile-alt"></i></div>
+                    <div>
+                        <h3>移动端操作</h3>
+                        <p>直接长按二维码保存图片 → 打开对应APP扫码添加</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-desktop"></i></div>
+                    <div>
+                        <h3>电脑端操作</h3>
+                        <p>使用手机扫码 → 发送好友请求 → 等待通过验证</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚信息 -->
+        <div style="text-align: center; margin-top: 50px; color: #666;">
+            <p>
+                <i class="fas fa-clock"></i> 工作日24小时内回复 | 
+                <i class="fas fa-shield-alt"></i> 企业官方认证账号 |
+                <i class="fas fa-phone-volume"></i> 客服电话：xxx-xxxx-xxxx
+            </p>
+        </div>
+    </div>
+</body>
+</html>
