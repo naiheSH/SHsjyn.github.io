@@ -1,4 +1,3 @@
-欢迎光临
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -13,10 +12,14 @@
             font-family: '微软雅黑', sans-serif;
         }
 
+        
         body {
-            background: #f0f2f5;
-            line-height: 1.6;
-        }
+    background: #f0f2f5;
+    line-height: 1.6;
+    width: 100%;
+    height: 100%;
+    background-image: url(beijing.png);
+}
 
         .container {
             max-width: 1200px;
@@ -127,7 +130,7 @@
     <div class="container">
         <div class="header">
             <!-- 替换成你的Logo -->
-            <img src="logo.jpg" alt="Logo" class="logo">
+            <img src="https://shsjyn.github.io/logo.jpg" alt="Logo" class="logo">
             <h1>立即添加商务飞书</h1>
             <p>获取最新资讯与专属服务</p>
         </div>
@@ -136,7 +139,7 @@
             <div class="card">
                 <h2>扫码添加好友</h2>
                 <!-- 替换成你的二维码 -->
-                <img src="erweima.jpg" alt="飞书二维码" class="qrcode">
+                <img src="https://shsjyn.github.io/erweima.jpg" alt="飞书二维码" class="qrcode">
                 <p>或直接点击下方按钮添加</p>
                 <!-- 替换成你的飞书链接 -->
                 <a href="https://www.feishu.cn/invitation/page/add_contact/?token=864v1cc0-b526-4f99-83fa-515cc9dcb467&amp;unique_id=dFSNyxpF-ylx7xIllOqVKA==" class="cta-button" target="_blank">立即添加</a>
