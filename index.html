@@ -15,24 +15,19 @@
 
         body {
             background: #f0f2f5;
-    line-height: 1.6;
-    background-image: url(beijing.png);
-    background-size: contain;
-    width: 100%;
-    height: 100vh;
-    background-position: center;
-    /* background-repeat: no-repeat; */
-    background-attachment: fixed;
-    
-            
-
+            line-height: 1.6;
+            background-image: url(beijing.png);
+            background-size: contain;
+            width: 100%;
+            height: 100vh;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
-            
         }
 
         .header {
@@ -60,7 +55,8 @@
         }
 
         .card {
-            background: white;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.2);
             padding: 30px;
             border-radius: 40px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -109,7 +105,7 @@
             align-items: center;
             margin-bottom: 20px;
             padding: 15px;
-            background: #f8f9fa;
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 8px;
         }
 
@@ -129,14 +125,13 @@
             h1 {
                 font-size: 2em;
             }
-            
             .card {
                 width: 100%;
             }
         }
     </style>
 </head>
-<body >
+<body>
     <div class="container">
         <div class="header">
             <!-- 替换成你的Logo -->
@@ -150,11 +145,11 @@
                 <h2></h2>
                 <!-- 替换成你的二维码 -->
                 <a href="erweima.png">
-                <img src="erweima.png" alt="飞书二维码" class="qrcode">
-            </a>
+                    <img src="erweima.png" alt="飞书二维码" class="qrcode">
+                </a>
                 <p>或直接点击下方按钮添加</p>
                 <!-- 替换成你的飞书链接 -->
-                <a href="https://www.feishu.cn/invitation/page/add_contact/?token=864v1cc0-b526-4f99-83fa-515cc9dcb467&amp;unique_id=dFSNyxpF-ylx7xIllOqVKA==" class="cta-button" target="_blank">立即添加</a>
+                <a href="https://www.feishu.cn/invitation/page/add_contact/?token=864v1cc0-b526-4f99-83fa-515cc9dcb467&unique_id=dFSNyxpF-ylx7xIllOqVKA==" class="cta-button" target="_blank">立即添加</a>
             </div>
 
             <div class="card">
@@ -181,4 +176,4 @@
         </div>
     </div>
 </body>
-</html>
+</html>    
