@@ -1,184 +1,31 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="logo.ico">
-    <title>聯係我們 - 飛書商務合作</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: '微软雅黑', sans-serif;
-        }
+# 商务飞书联系页面项目
 
-        body {
-            background: #f0f2f5;
-    line-height: 1.6;
-    background-image: url(beijing.png);
-    background-size: contain;
-    width: 100%;
-    height: 100vh;
-    background-position: center;
-    /* background-repeat: no-repeat; */
-    background-attachment: fixed;
-    
-            
+## 项目简介
+这是一个引导用户添加商务飞书的网页，通过展示飞书二维码和添加指引，方便用户建立商务联系。
 
-        }
+## 技术栈
+- **HTML**：构建网页结构。
+- **CSS**：负责样式设计，实现响应式布局和交互动画。
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            
-        }
+## 页面展示
+- **头部区域**：呈现项目 Logo、标题等信息。
+- **内容区域**：包含展示二维码的卡片和提供添加指引的卡片。
+- **响应式设计**：在不同屏幕尺寸下自适应展示，卡片和按钮具有交互效果。
 
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+## 使用方式
+1. **本地查看**：直接用浏览器打开 `index.html` 文件。
+2. **线上部署**：将项目部署到 GitHub Pages 或其他静态网站托管平台。
 
-        .logo {
-            width: 130px;
-            margin-bottom: 20px;
-            border-radius: 40px;
-        }
+## 部署到 GitHub Pages
+1. 确保项目已推送到 GitHub 仓库。
+2. 在仓库设置中启用 GitHub Pages，选择 `main` 分支或 `docs` 文件夹作为发布源。
+3. 部署完成后，通过生成的链接访问页面。
 
-        h1 {
-            color: #1a1a1a;
-            font-size: 2.5em;
-            margin-bottom: 15px;
-        }
+## 贡献指南
+欢迎对本项目提出建议或贡献代码：
+1. Fork 本仓库。
+2. 创建新分支：`git checkout -b feature/your-feature-name`。
+3. 提交更改：`git commit -m "Add your message"`。
+4. 推送分支：`git push origin feature/your-feature-name`。
+5. 提交 Pull Request。
 
-        .content {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 40px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 320px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .qrcode {
-            width: 200px;
-            height: 200px;
-            margin: 20px auto;
-            border: 1px solid #ddd;
-            padding: 10px;
-            background: white;
-            border-radius: 40px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #3370ff;
-            color: white !important;
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: background 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: #295dbf;
-        }
-
-        .steps {
-            margin: 30px 0;
-            text-align: left;
-        }
-
-        .step {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-
-        .step-number {
-            background: #3370ff;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-            
-            .card {
-                width: 100%;
-            }
-        }
-    </style>
-</head>
-<body >
-    <div class="container">
-        <div class="header">
-            <!-- 替换成你的Logo -->
-            <img src="logo.png" alt="Logo" class="logo">
-            <h1>立即添加商务飞书</h1>
-            <p>譯己，譯心，譯深秋深淺，譯人生淅瀝！</p>
-        </div>
-
-        <div class="content">
-            <div class="card">
-                <h2></h2>
-                <!-- 替换成你的二维码 -->
-                <a href="erweima.png">
-                <img src="erweima.png" alt="飞书二维码" class="qrcode">
-            </a>
-                <p>或直接点击下方按钮添加</p>
-                <!-- 替换成你的飞书链接 -->
-                <a href="https://www.feishu.cn/invitation/page/add_contact/?token=864v1cc0-b526-4f99-83fa-515cc9dcb467&amp;unique_id=dFSNyxpF-ylx7xIllOqVKA==" class="cta-button" target="_blank">立即添加</a>
-            </div>
-
-            <div class="card">
-                <h2>添加指引</h2>
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        打开飞书APP
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        点击"右上角加号" → 扫一扫
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        扫描二维码添加好友
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 50px; color: #000000;">
-            <p>©上海世界逸南科技有限公司</p>
-        </div>
-    </div>
-</body>
-</html>
