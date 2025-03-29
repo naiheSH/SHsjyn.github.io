@@ -222,14 +222,25 @@
             modeStatus.classList.add('mode-status');
             body.appendChild(modeStatus);
 
-            const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            if (prefersDarkMode) {
-                body.classList.add('dark-mode');
-                modeStatus.textContent = '当前模式: 深色';
-            } else {
-                body.classList.add('light-mode');
-                modeStatus.textContent = '当前模式: 浅色';
+            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+            function setMode() {
+                if (mediaQuery.matches) {
+                    body.classList.remove('light-mode');
+                    body.classList.add('dark-mode');
+                    modeStatus.textContent = '当前模式: 深色';
+                } else {
+                    body.classList.remove('dark-mode');
+                    body.classList.add('light-mode');
+                    modeStatus.textContent = '当前模式: 浅色';
+                }
             }
+
+            // 页面加载时设置初始模式
+            setMode();
+
+            // 监听系统主题变化
+            mediaQuery.addEventListener('change', setMode);
 
             modeToggle.addEventListener('click', function () {
                 if (body.classList.contains('light-mode')) {
