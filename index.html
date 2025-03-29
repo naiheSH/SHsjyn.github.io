@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="logo.ico">
     <link rel="preload" href="logo.png" as="image">
-    <link rel="preload" href="https://img.picui.cn/free/2025/03/29/67e80765776ab.png" as="image">
     <link rel="preload" href="erweima.png" as="image">
     <title>聯係我們 - 飛書商務合作</title>
     <style>
@@ -20,8 +19,6 @@
         body {
             background: #f0f2f5;
             line-height: 1.6;
-            background-image: url(https://img.picui.cn/free/2025/03/29/67e80765776ab.png);
-            background-size: contain;
             width: 100%;
             height: 100vh;
             background-position: center;
@@ -164,6 +161,18 @@
             color: #000
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const body = document.body;
+            const bgImageUrl = 'https://a1.boltp.com/2025/03/29/67e80a166bedd.png';
+            const img = new Image();
+            img.src = bgImageUrl;
+            img.onload = function () {
+                body.style.backgroundImage = `url(${bgImageUrl})`;
+                body.style.backgroundSize = 'contain';
+            };
+        });
+    </script>
 </head>
 
 <body>
