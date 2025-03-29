@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="logo.ico">
-    <link rel="preload" href="logo.png" as="image">
-    <link rel="preload" href="erweima.png" as="image">
+    <link rel="shortcut icon" href="https://a1.boltp.com/2025/03/29/67e8109c65c40.ico">
+    <link rel="preload" href="https://a1.boltp.com/2025/03/29/67e8109c7ffef.png" as="image">
+    <link rel="preload" href="https://a1.boltp.com/2025/03/29/67e8109d1a446.png" as="image">
     <title>聯係我們 - 飛書商務合作</title>
     <style>
         * {
@@ -17,12 +17,39 @@
         }
 
         body {
-            background: #f0f2f5;
             line-height: 1.6;
             width: 100%;
             height: 100vh;
             background-position: center;
-            background-attachment: fixed
+            background-attachment: fixed;
+            transition: background-color 0.3s ease;
+        }
+
+        /* 浅色模式 */
+        body.light-mode {
+            background: #f0f2f5;
+            color: #000;
+            background-image: url('https://a1.boltp.com/2025/03/29/67e80a166bedd.png');
+            background-size: contain;
+        }
+
+        /* 深色模式 */
+        body.dark-mode {
+            background: #121212;
+            color: #fff;
+            background-image: url('https://a1.boltp.com/2025/03/29/67e81410cb399.png');
+            background-size: contain;
+        }
+
+        .dark-mode .card,
+        .dark-mode .step {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .dark-mode .social-links a {
+            color: #fff;
         }
 
         .container {
@@ -43,7 +70,6 @@
         }
 
         h1 {
-            color: #1a1a1a;
             font-size: 2.5em;
             margin-bottom: 15px
         }
@@ -64,7 +90,6 @@
             width: 320px;
             text-align: center;
             transition: transform .3s ease;
-            color: #000
         }
 
         .card:hover {
@@ -109,7 +134,6 @@
             padding: 15px;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 8px;
-            color: #000
         }
 
         .step-number {
@@ -143,7 +167,6 @@
         }
 
         .social-links a {
-            color: #000;
             text-decoration: none;
             transition: color .3s ease;
             font-size: 18px
@@ -158,19 +181,67 @@
             margin-top: 50px;
             font-size: 20px;
             font-weight: 700;
-            color: #000
+        }
+
+        .mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3370ff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background .3s ease;
+        }
+
+        .mode-toggle:hover {
+            background: #295dbf;
+        }
+
+        .mode-status {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const body = document.body;
-            const bgImageUrl = 'https://a1.boltp.com/2025/03/29/67e80a166bedd.png';
-            const img = new Image();
-            img.src = bgImageUrl;
-            img.onload = function () {
-                body.style.backgroundImage = `url(${bgImageUrl})`;
-                body.style.backgroundSize = 'contain';
-            };
+            const modeToggle = document.createElement('button');
+            modeToggle.textContent = '切换模式';
+            modeToggle.classList.add('mode-toggle');
+            body.appendChild(modeToggle);
+
+            const modeStatus = document.createElement('div');
+            modeStatus.classList.add('mode-status');
+            body.appendChild(modeStatus);
+
+            const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDarkMode) {
+                body.classList.add('dark-mode');
+                modeStatus.textContent = '当前模式: 深色';
+            } else {
+                body.classList.add('light-mode');
+                modeStatus.textContent = '当前模式: 浅色';
+            }
+
+            modeToggle.addEventListener('click', function () {
+                if (body.classList.contains('light-mode')) {
+                    body.classList.remove('light-mode');
+                    body.classList.add('dark-mode');
+                    modeStatus.textContent = '当前模式: 深色';
+                } else {
+                    body.classList.remove('dark-mode');
+                    body.classList.add('light-mode');
+                    modeStatus.textContent = '当前模式: 浅色';
+                }
+            });
         });
     </script>
 </head>
@@ -178,15 +249,15 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="logo.png" alt="Logo" class="logo" loading="lazy">
+            <img src="https://a1.boltp.com/2025/03/29/67e8109c7ffef.png" alt="logo.png" title="logo.png" class="logo" loading="lazy">
             <h1>立即添加商务飞书</h1>
             <p>譯己，譯心，譯深秋深淺，譯人生淅瀝！</p>
         </div>
         <div class="content">
             <div class="card">
                 <h2></h2>
-                <a href="erweima.png">
-                    <img src="erweima.png" alt="飞书二维码" class="qrcode" loading="lazy">
+                <a href="https://a1.boltp.com/2025/03/29/67e8109d1a446.png">
+                    <img src="https://a1.boltp.com/2025/03/29/67e8109d1a446.png" alt="erweima.png" title="erweima.png" class="qrcode" loading="lazy">
                 </a>
                 <p>或直接点击下方按钮添加</p>
                 <a href="https://www.feishu.cn/invitation/page/add_contact/?token=864v1cc0-b526-4f99-83fa-515cc9dcb467&unique_id=dFSNyxpF-ylx7xIllOqVKA=="
@@ -210,7 +281,7 @@
                 </div>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 50px; color: #000;">
+        <div style="text-align: center; margin-top: 50px;">
             <p>©上海世界逸南科技有限公司</p>
         </div>
         <div class="social-title">社交媒体</div>
@@ -221,7 +292,7 @@
             <a href="https://web.vip.miui.com/page/info/mio/mio/homePage?uid=2218681128&fromPathname=mioDetail&app_version=dev.230809"
                 target="_blank">小米社区</a>
         </div>
-        <div style="text-align: center; margin-top: 20px; color: #000;">
+        <div style="text-align: center; margin-top: 20px;">
             <p>官方邮箱 GF@shsjyn.cn</p>
             <p>投诉与反馈 110@shsjyn.cn</p>
             <p>人力资源 HRBP@shsjyn.cn</p>
