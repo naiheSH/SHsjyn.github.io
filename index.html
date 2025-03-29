@@ -42,14 +42,25 @@
         }
 
         .dark-mode .card,
-        .dark-mode .step {
+        .dark-mode .step,
+        .dark-mode .footer-info {
             backdrop-filter: blur(10px);
             background-color: rgba(255, 255, 255, 0.1);
             color: #fff;
         }
 
-        .dark-mode .social-links a {
-            color: #fff;
+        .light-mode .footer-info {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #000;
+        }
+
+        .dark-mode .footer-info a {
+            color: white;
+        }
+
+        .light-mode .footer-info a {
+            color: #000;
         }
 
         .container {
@@ -169,7 +180,8 @@
         .social-links a {
             text-decoration: none;
             transition: color .3s ease;
-            font-size: 18px
+            font-size: 18px;
+            font-family: 'STXingkai', cursive;
         }
 
         .social-links a:hover {
@@ -178,41 +190,40 @@
 
         .social-title {
             text-align: center;
-            margin-top: 20px; /* 减少社交媒体标题与上方元素的间距 */
+            margin-top: 20px;
             font-size: 20px;
             font-weight: 700;
+            font-family: 'STXingkai', cursive;
         }
 
         .mode-toggle {
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #3370ff;
             color: #fff;
             border: none;
             padding: 10px 15px;
             border-radius: 25px;
             cursor: pointer;
             transition: background .3s ease;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         .mode-toggle:hover {
-            background: #295dbf;
+            background-color: rgba(51, 112, 255, 0.7);
         }
 
-        .mode-status {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
+        .light-mode .mode-toggle {
+            color: #000;
         }
 
         .footer-info {
             text-align: center;
-            margin-top: 20px; /* 减少底部信息与上方元素的间距 */
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 40px;
+            font-family: 'STXingkai', cursive;
         }
     </style>
     <script>
@@ -223,21 +234,15 @@
             modeToggle.classList.add('mode-toggle');
             body.appendChild(modeToggle);
 
-            const modeStatus = document.createElement('div');
-            modeStatus.classList.add('mode-status');
-            body.appendChild(modeStatus);
-
             const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
             function setMode() {
                 if (mediaQuery.matches) {
                     body.classList.remove('light-mode');
                     body.classList.add('dark-mode');
-                    modeStatus.textContent = '当前模式: 深色';
                 } else {
                     body.classList.remove('dark-mode');
                     body.classList.add('light-mode');
-                    modeStatus.textContent = '当前模式: 浅色';
                 }
             }
 
@@ -251,11 +256,9 @@
                 if (body.classList.contains('light-mode')) {
                     body.classList.remove('light-mode');
                     body.classList.add('dark-mode');
-                    modeStatus.textContent = '当前模式: 深色';
                 } else {
                     body.classList.remove('dark-mode');
                     body.classList.add('light-mode');
-                    modeStatus.textContent = '当前模式: 浅色';
                 }
             });
         });
@@ -308,8 +311,8 @@
                     target="_blank">小米社区</a>
             </div>
             <p>官方邮箱 GF@shsjyn.cn</p>
-            <p>投诉与反馈 110@shsjyn.cn</p>
             <p>人力资源 HRBP@shsjyn.cn</p>
+            <p>本网站友情鸣谢“山河尽赠佳人”</p>
         </div>
     </div>
 </body>
