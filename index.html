@@ -43,24 +43,30 @@
 
         .dark-mode .card,
         .dark-mode .step,
-        .dark-mode .footer-info {
+        .dark-mode .footer-info,
+        .dark-mode .special-thanks {
             backdrop-filter: blur(10px);
             background-color: rgba(255, 255, 255, 0.1);
             color: #fff;
         }
 
-        .light-mode .footer-info {
+        .light-mode .footer-info,
+        .light-mode .special-thanks {
             backdrop-filter: blur(10px);
             background-color: rgba(255, 255, 255, 0.2);
             color: #000;
         }
 
-        .dark-mode .footer-info a {
+        .dark-mode .footer-info a,
+        .dark-mode .special-thanks a {
             color: white;
+            font-family: 'STXingkai', cursive;
         }
 
-        .light-mode .footer-info a {
+        .light-mode .footer-info a,
+        .light-mode .special-thanks a {
             color: #000;
+            font-family: 'STXingkai', cursive;
         }
 
         .container {
@@ -172,7 +178,7 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 40px;
             margin-top: 10px;
             flex-wrap: wrap
         }
@@ -216,6 +222,12 @@
 
         .light-mode .mode-toggle {
             color: #000;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .dark-mode .mode-toggle {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         .footer-info {
@@ -224,6 +236,30 @@
             padding: 20px;
             border-radius: 40px;
             font-family: 'STXingkai', cursive;
+        }
+
+        .footer-info p {
+            margin-bottom: 10px;
+        }
+
+        .footer-info .social-title {
+            margin-top: 30px;
+        }
+
+        .footer-info p:nth-of-type(2) {
+            margin-top: 40px;
+        }
+
+        .special-thanks {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 40px;
+        }
+
+        .special-thanks h2 {
+            font-weight: bold;
+            margin-bottom: 10px;
         }
     </style>
     <script>
@@ -311,8 +347,12 @@
                     target="_blank">小米社区</a>
             </div>
             <p>官方邮箱 GF@shsjyn.cn</p>
+            <p>投诉与反馈 110@shsjyn.cn</p>
             <p>人力资源 HRBP@shsjyn.cn</p>
-            <p>本网站友情鸣谢“山河尽赠佳人”</p>
+        </div>
+        <div class="special-thanks">
+            <h2>特别鸣谢</h2>
+            <p>奈何  /  山河尽赠佳人：  <a href="https://web.vip.miui.com/page/info/mio/mio/homePage?uid=2595516270&app_version=dev.250313">小米社区</a>  <a href="https://github.com/naiheSH">Github</a></p>
         </div>
     </div>
 </body>
