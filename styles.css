@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: '微软雅黑', sans-serif
+}
+
+body {
+    line-height: 1.6;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    transition: background-color 0.3s ease;
+}
+
+/* 浅色模式 */
+body.light-mode {
+    background: #f0f2f5;
+    color: #000;
+    background-image: url('https://a1.boltp.com/2025/03/29/67e80a166bedd.png');
+    background-size: contain;
+}
+
+/* 深色模式 */
+body.dark-mode {
+    background: #121212;
+    color: #fff;
+    background-image: url('https://a1.boltp.com/2025/03/29/67e81410cb399.png');
+    background-size: contain;
+}
+
+.dark-mode .card,
+.dark-mode .step,
+.dark-mode .footer-info,
+.dark-mode .special-thanks {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.light-mode .footer-info,
+.light-mode .special-thanks {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #000;
+}
+
+.dark-mode .footer-info a,
+.dark-mode .special-thanks a {
+    color: white;
+    font-family: 'STXingkai', cursive;
+}
+
+.light-mode .footer-info a,
+.light-mode .special-thanks a {
+    color: #000;
+    font-family: 'STXingkai', cursive;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 50px
+}
+
+.logo {
+    width: 130px;
+    margin-bottom: 20px;
+    border-radius: 40px
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px
+}
+
+.content {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.card {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+    transition: transform .3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px)
+}
+
+.qrcode {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #fff;
+    border-radius: 40px
+}
+
+.cta-button {
+    display: inline-block;
+    background: #3370ff;
+    color: #fff !important;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 20px;
+    transition: background .3s ease
+}
+
+.cta-button:hover {
+    background: #295dbf
+}
+
+.steps {
+    margin: 30px 0;
+    text-align: left
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+.step-number {
+    background: #3370ff;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em
+    }
+
+    .card {
+        width: 100%
+    }
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 10px;
+    flex-wrap: wrap
+}
+
+.social-links a {
+    text-decoration: none;
+    transition: color .3s ease;
+    font-size: 18px;
+    font-family: 'STXingkai', cursive;
+}
+
+.social-links a:hover {
+    color: #295dbf
+}
+
+.social-title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'STXingkai', cursive;
+}
+
+.mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background .3s ease;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mode-toggle:hover {
+    background-color: rgba(51, 112, 255, 0.7);
+}
+
+.light-mode .mode-toggle {
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .mode-toggle {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-info {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 40px;
+    font-family: 'STXingkai', cursive;
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+}
+
+.footer-info .social-title {
+    margin-top: 30px;
+}
+
+.footer-info p:nth-of-type(2) {
+    margin-top: 40px;
+}
+
+/* 新增样式，让链接在一行显示并添加下划线 */
+.footer-info .social-links-inline {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* 调整间隔 */
+    margin-top: 10px;
+}
+
+.footer-info .social-links-inline a {
+    text-decoration: underline;
+    transition: color .3s ease;
+    font-size: 18px;
+    font-family: 'STXingkai', cursive;
+}
+
+.footer-info .social-links-inline a:hover {
+    color: #295dbf;
+}
+
+.special-thanks {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 40px;
+}
+
+.special-thanks h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+
+/* 自托管字体（把 woff2/woff 放到项目的 fonts/ 目录） */
+@font-face {
+    font-family: 'MaShanZhengLocal';
+    src: url('./fonts/MaShanZheng.woff2') format('woff2'),
+         url('./fonts/MaShanZheng.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 强制特别鸣谢区及其所有子元素使用书法体；移除固定字号，保留继承 */
+.special-thanks,
+.special-thanks * {
+    font-family: 'MaShanZhengLocal', 'Ma Shan Zheng', 'STXingkai', 'KaiTi', '楷体', serif !important;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height: 1.4;
+    font-size: inherit; /* 防止被放大 */
+}
+
+/* 如果仍使用 Google Fonts，保留该规则（优先顺序：本地 -> Google -> 回退） */
+.footer-info,
+.footer-info a {
+    font-family: 'MaShanZhengLocal', 'Ma Shan Zheng', 'STXingkai', 'KaiTi', '楷体', serif;
+}
+
+/* 手机端优化：增大字号并允许换行，避免字体无法加载时显示异常 */
+@media (max-width: 768px) {
+    .special-thanks,
+    .footer-info {
+        font-size: 16px;
+        word-break: break-word;
+    }
+
+    .special-thanks h2 {
+        font-size: 1.4em;
+    }
+}
