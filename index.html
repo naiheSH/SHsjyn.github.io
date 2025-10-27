@@ -13,40 +13,25 @@
     <link rel="stylesheet" href="styles.css">
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener('DOMContentLoaded', function () {
             const body = document.body;
-            const modeToggle = document.createElement('button');
-            modeToggle.textContent = '切换模式';
-            modeToggle.classList.add('mode-toggle');
-            body.appendChild(modeToggle);
-
             const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-            function setMode() {
-                if (mediaQuery.matches) {
-                    body.classList.remove('light-mode');
-                    body.classList.add('dark-mode');
-                } else {
-                    body.classList.remove('dark-mode');
-                    body.classList.add('light-mode');
-                }
+            function applyTheme() {
+                const isDark = mediaQuery.matches;
+                body.classList.toggle('dark-mode', isDark);
+                body.classList.toggle('light-mode', !isDark);
             }
 
-            // 页面加载时设置初始模式
-            setMode();
+            // 初始应用系统主题
+            applyTheme();
 
-            // 监听系统主题变化
-            mediaQuery.addEventListener('change', setMode);
-
-            modeToggle.addEventListener('click', function () {
-                if (body.classList.contains('light-mode')) {
-                    body.classList.remove('light-mode');
-                    body.classList.add('dark-mode');
-                } else {
-                    body.classList.remove('dark-mode');
-                    body.classList.add('light-mode');
-                }
-            });
+            // 监听系统主题变化（兼容旧 API）
+            if (typeof mediaQuery.addEventListener === 'function') {
+                mediaQuery.addEventListener('change', applyTheme);
+            } else if (typeof mediaQuery.addListener === 'function') {
+                mediaQuery.addListener(applyTheme);
+            }
         });
     </script>
 </head>
