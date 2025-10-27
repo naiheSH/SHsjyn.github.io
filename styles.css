@@ -269,3 +269,44 @@ h1 {
     font-weight: bold;
     margin-bottom: 10px;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+
+/* 自托管字体（把 woff2/woff 放到项目的 fonts/ 目录） */
+@font-face {
+    font-family: 'MaShanZhengLocal';
+    src: url('./fonts/MaShanZheng.woff2') format('woff2'),
+         url('./fonts/MaShanZheng.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 强制特别鸣谢区及其所有子元素使用书法体；移除固定字号，保留继承 */
+.special-thanks,
+.special-thanks * {
+    font-family: 'MaShanZhengLocal', 'Ma Shan Zheng', 'STXingkai', 'KaiTi', '楷体', serif !important;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height: 1.4;
+    font-size: inherit; /* 防止被放大 */
+}
+
+/* 如果仍使用 Google Fonts，保留该规则（优先顺序：本地 -> Google -> 回退） */
+.footer-info,
+.footer-info a {
+    font-family: 'MaShanZhengLocal', 'Ma Shan Zheng', 'STXingkai', 'KaiTi', '楷体', serif;
+}
+
+/* 手机端优化：增大字号并允许换行，避免字体无法加载时显示异常 */
+@media (max-width: 768px) {
+    .special-thanks,
+    .footer-info {
+        font-size: 16px;
+        word-break: break-word;
+    }
+
+    .special-thanks h2 {
+        font-size: 1.4em;
+    }
+}
