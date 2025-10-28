@@ -4,72 +4,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://a1.boltp.com/2025/03/29/67e8109c65c40.ico">
-    <link rel="preload" href="https://a1.boltp.com/2025/03/29/67e8109c7ffef.png" as="image">
-    <link rel="preload" href="https://a1.boltp.com/2025/03/29/67e8109d1a446.png" as="image">
+    <meta name="description" content="上海世界逸南科技有限公司商务合作联系方式，包括飞书和微信二维码">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="logo.ico">
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="logo.png" as="image" fetchpriority="high">
+    <link rel="preload" href="erweima.png" as="image" fetchpriority="high">
+    <!-- 预加载字体文件 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>聯係我們 - 飛書商務合作</title>
 
-    <!-- 优先加载书法体 -->
-    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
-
-    <!-- 引入独立的 CSS 文件 -->
+    <!-- Google 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="preconnect" crossorigin>
+    
     <link rel="stylesheet" href="styles.css">
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const body = document.body;
-            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-            function applyTheme() {
-                const isDark = mediaQuery.matches;
-                body.classList.toggle('dark-mode', isDark);
-                body.classList.toggle('light-mode', !isDark);
-            }
-
-            // 初始应用系统主题
-            applyTheme();
-
-            // 监听系统主题变化（兼容旧 API）
-            if (typeof mediaQuery.addEventListener === 'function') {
-                mediaQuery.addEventListener('change', applyTheme);
-            } else if (typeof mediaQuery.addListener === 'function') {
-                mediaQuery.addListener(applyTheme);
-            }
-        });
-    </script>
+            // 主题切换逻辑 - 确保DOM加载完成后执行
+            document.addEventListener('DOMContentLoaded', function() {
+                const toggleBtn = document.getElementById('theme-toggle');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+                const body = document.body;
+                
+                // 初始化主题
+                function initTheme() {
+                    try {
+                        const savedTheme = localStorage.getItem('theme');
+                        const isDarkMode = savedTheme === 'dark' || (!savedTheme && prefersDark.matches);
+                        
+                        // 直接设置class，确保即时生效
+                        body.classList.toggle('dark-mode', isDarkMode);
+                        body.classList.toggle('light-mode', !isDarkMode);
+                        
+                        if (toggleBtn) {
+                            toggleBtn.textContent = isDarkMode ? '🌙' : '☀️';
+                        }
+                    } catch (error) {
+                        console.warn('主题初始化出错:', error);
+                        body.classList.add('light-mode');
+                    }
+                }
+                
+                // 即时切换主题
+                function toggleTheme() {
+                    try {
+                        const isDarkMode = body.classList.contains('dark-mode');
+                        const newMode = isDarkMode ? 'light' : 'dark';
+                        
+                        // 直接切换class，确保即时生效
+                        body.classList.toggle('dark-mode', !isDarkMode);
+                        body.classList.toggle('light-mode', isDarkMode);
+                        
+                        // 保存主题设置
+                        localStorage.setItem('theme', newMode);
+                        
+                        if (toggleBtn) {
+                            toggleBtn.textContent = newMode === 'dark' ? '🌙' : '☀️';
+                        }
+                    } catch (error) {
+                        console.warn('主题切换出错:', error);
+                    }
+                }
+                
+                // 初始化主题
+                initTheme();
+                
+                // 添加事件监听
+                if (toggleBtn) {
+                    toggleBtn.addEventListener('click', toggleTheme);
+                }
+                
+                // 监听系统主题变化
+                if (prefersDark.addEventListener) {
+                    prefersDark.addEventListener('change', () => {
+                        try {
+                            if (!localStorage.getItem('theme')) {
+                                initTheme();
+                            }
+                        } catch (error) {
+                            console.warn('系统主题变化监听出错:', error);
+                        }
+                    });
+                }
+            });
+        </script>
 </head>
 
 <body>
     <div class="container">
-        <div class="header">
-            <img src="https://a1.boltp.com/2025/03/29/67e8109c7ffef.png" alt="logo.png" title="logo.png" class="logo" loading="lazy">
-            <h1>立即添加商务飞书</h1>
+        <button id="theme-toggle" class="mode-toggle">🌙</button>
+        <header class="header">
+            <img src="logo.png" alt="上海世界逸南科技有限公司标志" title="公司标志" class="logo" loading="lazy">
+            <h1>商务合作联系方式</h1>
             <p>譯己，譯心，譯深秋深淺，譯人生淅瀝！</p>
-        </div>
+        </header>
+
         <div class="content">
-            <div class="card">
-                               <!-- ...existing code... -->
-                                <h2>扫一扫</h2>
-                                <figure class="qrcode-figure">
-                                    <!-- 飞书二维码块（保留原有类名） -->
-                                    <div class="feishu-block">
-                                        <a href="https://a1.boltp.com/2025/03/29/67e8109d1a446.png" title="飞书二维码">
-                                            <img src="https://a1.boltp.com/2025/03/29/67e8109d1a446.png" alt="飞书二维码" class="qrcode" loading="lazy">
-                                        </a>
-                                        <figcaption class="qrcode-caption">飞书二维码</figcaption>
-                                    </div>
-                                </figure>
-                <!-- ...existing code... -->
-                <p>或直接点击下方按钮添加</p>
-                <a href="https://www.feishu.cn/invitation/page/add_contact/?token=864v1cc0-b526-4f99-83fa-515cc9dcb467&unique_id=dFSNyxpF-ylx7xIllOqVKA=="
-                    class="cta-button" target="_blank">立即添加</a>
+            <div class="contact-methods">
+                <!-- 飞书二维码 - 弹窗卡片效果 -->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="qrcode-figure feishu-container">
+                            <h3 class="qrcode-label feishu-title">扫一扫</h3>
+                            <div class="feishu-qrcode-wrapper">
+                                <a href="erweima.png" target="_blank" rel="noopener noreferrer">
+                                    <img src="erweima.png" alt="飞书二维码" class="qrcode feishu-qrcode" title="点击查看大图">
+                                </a>
+                            </div>
+                            <p class="qrcode-caption feishu-qrcode-title">飞书  二维码</p>
+                            <p class="qrcode-caption feishu-instruction">或直接点击下方按钮添加</p>
+                            <a href="https://www.feishu.cn/invitation/page/add_contact/?token=864v1cc0-b526-4f99-83fa-515cc9dcb467&unique_id=dFSNyxpF-ylx7xIllOqVKA==" target="_blank" rel="noopener noreferrer" class="add-button">立即添加</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 微信二维码 -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="qrcode-label">微  信</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="qrcode-figure">
+                            <a href="https://a1.boltp.com/2025/10/27/68ff071c02a29.jpg" target="_blank" rel="noopener noreferrer">
+                                <img src="https://a1.boltp.com/2025/10/27/68ff071c02a29.jpg" alt="微信二维码（添加时请备注来源）" class="qrcode" title="微信二维码（添加时请备注来源）">
+                            </a>
+                            <p class="qrcode-caption">扫码添加微信好友，请备注来源</p>
+                            <a href="https://a1.boltp.com/2025/10/27/68ff071c02a29.jpg" target="_blank" rel="noopener noreferrer" class="zoom-button">查看大图</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
+            <!-- 添加指引 -->
             <div class="card">
-                <h2>添加指引</h2>
+                <h2 class="qrcode-label">添加指引</h2>
                 <div class="steps">
                     <div class="step">
                         <div class="step-number">1</div>
-                        打开飞书 APP
+                        打开对应 APP
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
@@ -81,36 +154,23 @@
                     </div>
                 </div>
             </div>
-            <!-- 微信二维码独立块：已移出飞书块，放在“添加指引”后 -->
-            <div id="wechat-block" class="wechat-block">
-                <a href="https://a1.boltp.com/2025/10/27/68ff071c02a29.jpg"
-                   target="_blank"
-                   title="微信二维码（添加时请备注来源）"
-                   aria-label="微信二维码（添加时请备注来源）"
-                   data-caption="微信二维码（添加时请备注来源）">
-                    <img src="https://a1.boltp.com/2025/10/27/68ff071c02a29.jpg"
-                         alt="微信二维码（添加时请备注来源）"
-                         class="wechat-qrcode"
-                         loading="lazy">
-                </a>
-                <figcaption id="wechat-caption" class="wechat-caption">微信二维码（添加时请备注来源）</figcaption>
-            </div>
         </div>
-        <div class="footer-info">
-            <p>©上海世界逸南科技有限公司</p>
+
+        <footer class="footer-info">
+            <p> © 上海世界逸南科技有限公司</p>
             <div class="social-title">社交媒体</div>
             <div class="social-links-inline">
                 <a href="https://support.qq.com/embed/phone/678777" target="_blank">在线反馈</a>
                 <a href="https://m.weibo.cn/u/7621918292?jumpfrom=weibocom" target="_blank">微博</a>
                 <a href="https://v.douyin.com/iFvkP3W1/" target="_blank">抖音</a>
-                <!-- 修复了断行导致的错误属性 -->
                 <a href="https://v.douyin.com/DEam0QmZGys/" target="_blank">法务部抖音</a>
             </div>
             <p>官方邮箱 GF@shsjyn.cn</p>
             <p>法务部门 LD@shsjyn.cn</p>
             <p>人力资源部 HRBP@shsjyn.cn</p>
         </div>
-        <div class="special-thanks">
+
+        <section class="special-thanks">
             <h2>特别鸣谢</h2>
             <p>山河尽赠佳人：  <a href="https://web.vip.miui.com/page/info/mio/mio/homePage?uid=2595516270&app_version=dev.250313">小米社区</a>  <a href="https://github.com/naiheSH">Github</a></p>
             <p>D S J I E 工作室</p>
